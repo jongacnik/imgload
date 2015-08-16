@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>imgload</title>
+  </head>
+  <body>
+
+    <img data-src="nice.jpg">
+    <div data-results></div>
+
+  <script src="../dist/imgload.bundled.js"></script>
+  <script>
+
+    window.$ = document.querySelectorAll.bind(document)
+
+    // setup
+    var loadThisImg = imgload($('[data-src]'))
+
+    loadThisImg
+      .on('begin', function (img) {
+        console.log('begin', img)
+        $('[data-results]')[0].appendChild(document.createTextNode("Begin... "))
+      })
+      .on('error', function (img) {
+        console.log('ERROR!!!!', img)
+        $('[data-results]')[0].appendChild(document.createTextNode("ERROR! "))
+      })
+      .on('load', function (img) {
+        console.log('load', img)
+        $('[data-results]')[0].appendChild(document.createTextNode("LOADED! "))
+      })
+      .start()
+
+  </script>
+  </body>
+</html>
