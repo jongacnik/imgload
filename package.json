@@ -1,6 +1,6 @@
 {
   "name": "imgload",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "imgload loads an image",
   "repository": {
     "type": "git",
@@ -9,15 +9,13 @@
   "main": "main.js",
   "dependencies": {
     "etrig": "^1.0.0",
-    "extend": "^3.0.0",
-    "sanitize-elements": "^0.1.2",
     "tiny-emitter": "^1.0.0"
   },
   "keywords": [
     "load",
+    "src",
     "image",
     "preload",
-    "callbacks",
     "events"
   ],
   "author": "Jon Gacnik <jon@folderstudio.com> (http://jongacnik.com/)",

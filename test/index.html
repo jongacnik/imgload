@@ -6,7 +6,7 @@
   </head>
   <body>
 
-    <img data-src="nice.jpg">
+    <img src="nice.jpg">
     <div data-results></div>
 
   <script src="../dist/imgload.bundled.js"></script>
@@ -15,20 +15,20 @@
     window.$ = document.querySelectorAll.bind(document)
 
     // setup
-    var loadThisImg = imgload($('[data-src]'))
+    var loader = imgload($('[src]')[0].getAttribute('src'))
 
-    loadThisImg
-      .on('begin', function (img) {
-        console.log('begin', img)
-        $('[data-results]')[0].appendChild(document.createTextNode("Begin... "))
-      })
-      .on('error', function (img) {
-        console.log('ERROR!!!!', img)
+    loader
+      .on('error', function (src) {
+        console.log('ERROR!!!!', src)
         $('[data-results]')[0].appendChild(document.createTextNode("ERROR! "))
       })
-      .on('load', function (img) {
-        console.log('load', img)
+      .on('load', function (src) {
+        console.log('load', src)
         $('[data-results]')[0].appendChild(document.createTextNode("LOADED! "))
+      })
+      .on('always', function (src) {
+        console.log('always', src)
+        $('[data-results]')[0].appendChild(document.createTextNode("ALWAYS! "))
       })
       .start()
 
