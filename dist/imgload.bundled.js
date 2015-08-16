@@ -18,7 +18,7 @@ module.exports = function ($image, opts) {
     mode       : 'src', // src, background, load/false
     begin      : function ($e) { }, // called on load begin
     error      : function ($e) { }, // called on image error
-    load       : function ($e) { }  // called on load load
+    load       : function ($e) { }  // called on image load
   }, opts)
 
   var init = function () {
@@ -42,15 +42,15 @@ module.exports = function ($image, opts) {
     img.addEventListener('load', function () {
       if (!loaded) {
         loaded = true
-        var mode = $e.getAttribute('data-load-mode') || options.mode
+        var mode = $e.getAttribute('data-imgload-mode') || options.mode
         if (mode === 'load') {
           // do nothing to dom
         } else if (mode === 'background') {
           $e.style.backgroundImage = "url('" + src + "')"
-          $e.setAttribute('data-load-complete', '')
+          $e.setAttribute('data-imgload-complete', '')
         } else {
           $e.setAttribute('src', src)
-          $e.setAttribute('data-load-complete', '')
+          $e.setAttribute('data-imgload-complete', '')
         }
         load($e)
       }
