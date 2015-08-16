@@ -1,0 +1,36 @@
+{
+  "name": "imgload",
+  "version": "1.0.0",
+  "description": "imgload loads an image",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amongiants/imgload"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "etrig": "^1.0.0",
+    "extend": "^3.0.0",
+    "sanitize-elements": "^0.1.2",
+    "tiny-emitter": "^1.0.0"
+  },
+  "keywords": [
+    "load",
+    "image",
+    "preload",
+    "callbacks",
+    "events"
+  ],
+  "author": "Jon Gacnik <jon@folderstudio.com> (http://jongacnik.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amongiants/imgload/issues"
+  },
+  "homepage": "https://github.com/amongiants/imgload",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dist": "browserify main.js --s imgload > dist/imgload.bundled.js"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.1"
+  }
+}
